@@ -1,59 +1,88 @@
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================
+   ELEGANT JEWELRY ECOMMERCE DESIGN SYSTEM
+   Extracted from design reference: ai-generated-preview.png
+
+   Color Palette:
+   - Gold Accent: #C5A572 (38deg 34% 61%)
+   - Black: #000000
+   - White: #FFFFFF
+   - Charcoal: #2d2d2d (0deg 0% 18%)
+   - Medium Gray: #666666 (0deg 0% 40%)
+   - Light Gray: #CCCCCC (0deg 0% 80%)
+
+   Typography:
+   - Headings: Playfair Display (serif) - luxury elegance
+   - Body: Inter (sans-serif) - clean readability
+
+   Layout:
+   - Max width: 1200px
+   - Product cards: subtle shadows, rounded corners
+   - Hero sections: bold black backgrounds
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Pure white background with crisp black text */
+  /* Pure white background with charcoal text */
   --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  --foreground: 0 0% 18%;
 
-  /* Clean white cards with black text */
+  /* Clean white cards with charcoal text */
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  --card-foreground: 0 0% 18%;
 
   /* Popovers with white background */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --popover-foreground: 0 0% 18%;
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
+  /* Primary: Elegant Gold with white text */
+  --primary: 38 34% 61%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary: Charcoal background with white text */
+  --secondary: 0 0% 18%;
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Subtle gray with darker text */
+  /* Muted: Light gray with medium gray text */
   --muted: 0 0% 96%;
   --muted-foreground: 0 0% 40%;
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Accent: Elegant Gold (same as primary for jewelry theme) */
+  --accent: 38 34% 61%;
+  --accent-foreground: 0 0% 100%;
 
   /* Destructive: Clean red */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
+  /* Borders: Subtle light gray */
   --border: 0 0% 90%;
   --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  --ring: 38 34% 61%;
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Minimal rounded corners for modern elegance */
+  --radius: 0.25rem;
 
-  /* Sidebar: Clean white with black text */
+  /* Sidebar: Clean white with charcoal text */
   --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  --sidebar-foreground: 0 0% 18%;
+  --sidebar-primary: 38 34% 61%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
+  --sidebar-accent-foreground: 0 0% 18%;
   --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-ring: 38 34% 61%;
+
+  /* Custom jewelry-specific colors */
+  --gold: 38 34% 61%;
+  --gold-foreground: 0 0% 100%;
+  --charcoal: 0 0% 18%;
+  --charcoal-foreground: 0 0% 100%;
+  --black-bg: 0 0% 0%;
+  --light-gray: 0 0% 80%;
+  --medium-gray: 0 0% 40%;
 }
 
 .dark {
@@ -171,33 +200,106 @@ All colors MUST be HSL.
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Minimal, clean typography */
+/* Elegant luxury typography with serif headings */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: 0.02em;
   color: hsl(var(--foreground));
+  line-height: 1.2;
 }
 
-/* Clean button styles */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Body text and paragraphs */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Clean button styles with gold accent */
 button {
   font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
 }
 
-/* Subtle shadows for depth */
+/* Product card shadows matching design reference */
 .shadow-sm {
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.1);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.15);
+}
+
+/* Hover effects for interactive elements */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 0.2);
+}
+
+/* Gold accent utilities */
+.text-gold {
+  color: hsl(var(--gold));
+}
+
+.bg-gold {
+  background-color: hsl(var(--gold));
+}
+
+.border-gold {
+  border-color: hsl(var(--gold));
+}
+
+/* Charcoal utilities */
+.bg-charcoal {
+  background-color: hsl(var(--charcoal));
+  color: hsl(var(--charcoal-foreground));
+}
+
+.bg-black {
+  background-color: hsl(var(--black-bg));
+  color: white;
 }
